@@ -1,0 +1,21 @@
+{
+  "name": "food",
+  "version": "1.0.0",
+  "description": "Buffet Sabana's Food API",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "estidlore & vivianmufa",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "firebase": "^9.8.1",
+    "firebase-admin": "^10.2.0",
+    "http-errors": "^2.0.0",
+    "morgan": "^1.10.0"
+  }
+}
