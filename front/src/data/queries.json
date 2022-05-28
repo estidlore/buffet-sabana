@@ -1,0 +1,48 @@
+{
+  "beberages": {
+    "api": "beberages.com",
+    "add": {
+      "path": "/add",
+      "method": "post"
+    },
+    "del": {
+      "path": "/del",
+      "method": "post"
+    },
+    "get": {
+      "path": "/get",
+      "method": "get"
+    },
+    "getAll": {
+      "path": "/getAll",
+      "method": "get"
+    },
+    "set": {
+      "path": "/update",
+      "method": "post"
+    }
+  },
+  "dishes": {
+    "api": "dishes.com",
+    "add": {
+      "path": "/add",
+      "method": "post"
+    },
+    "del": {
+      "path": "/del",
+      "method": "post"
+    },
+    "get": {
+      "path": "/get",
+      "method": "get"
+    },
+    "getAll": {
+      "path": "/getAll",
+      "method": "get"
+    },
+    "set": {
+      "path": "/update",
+      "method": "post"
+    }
+  }
+}

@@ -1,0 +1,81 @@
+$color-dark: #111111;
+$color-light: #eeeeee;
+$color-primary: #224488;
+$color-secondary: #446688;
+$color-green: #228822;
+$color-red: #882222;
+$color-gray: #888888;
+$color-gray-light: #cccccc;
+$color-gray-dark: #333333;
+
+$colors: (
+  "dark": $color-dark,
+  "light": $color-light,
+  "primary": $color-primary,
+  "secondary": $color-secondary,
+  "green": $color-green,
+  "red": $color-red,
+  "gray": $color-gray,
+  "gray-light": $color-gray-light,
+  "gray-dark": $color-gray-dark
+);
+
+$breakpoint-sm: 590px;
+$breakpoint-md: 730px;
+$breakpoint-lg: 910px;
+$breakpoint-xl: 1130px;
+$breakpoint-xxl: 1400px;
+
+$breakpoints: (
+  sm: $breakpoint-sm,
+  md: $breakpoint-md,
+  lg: $breakpoint-lg,
+  xl: $breakpoint-xl,
+  xxl: $breakpoint-xxl,
+);
+
+@function map($map1, $map2) {
+  $res: (/*-1: -1,*/);
+  @each $k, $v in zip($map1, $map2) {
+    $res: map-merge($res, ($k: $v));
+  }
+  @return $res;
+}
+
+$x: (0 1 2 3 4 5);
+$x2: map($x, (0 1 2 4 8 16));
+$sq2: map($x, (0 1 1.41 2 2.83 4));
+$_10: (0 1 2 3 4 5 6 7 8 9 10);
+
+* {
+  // background-color: inherit;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-family: "Segoe UI", "sans-serif" !important;
+}
+
+body {
+  margin: 0;
+}
+
+// Colors
+
+@each $k, $color in $colors {
+  .bg-#{$k} {
+    background-color: $color;
+  }
+  .#{$k} {
+    color: $color;
+  }
+}
+
+.bg-none {
+  background: none;
+}

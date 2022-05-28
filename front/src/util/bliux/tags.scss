@@ -1,0 +1,80 @@
+button,
+input, select {
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 400;
+  padding: 0.4rem 0.8rem;
+  text-align: center;
+  text-decoration: none;
+  -webkit-user-select: none;
+  user-select: none;
+  vertical-align: middle;
+}
+
+select {
+  background-color: $color-gray-dark;
+  & option {
+    background-color: $color-gray-dark;
+  }
+}
+
+button {
+  background-color: $color-primary;
+  &:hover {
+    filter: invert(.1);
+  }
+}
+
+input {
+  background-color: $color-gray-dark;
+  color: $color-light;
+
+  outline: none;
+  &::placeholder {
+    color: $color-gray-light;
+  }
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+
+  & ul {
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    @include break(lg) {
+      flex-direction: row;
+    }
+  }
+  & a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+  }
+  & .collapse {
+    flex-basis: 100%;
+    flex-grow: 1;
+    align-items: center;
+    padding: map-get($sq2, 1) * .5rem;
+    &:not(.show) {
+      display: none;
+    }
+    @include break(lg) {
+      display: flex !important;
+      flex-basis: auto;
+      padding: 0;
+    }
+  }
+
+  & .toggler {
+    @include break(lg) {
+      display: none;
+    }
+  }
+}

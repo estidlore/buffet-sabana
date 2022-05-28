@@ -1,0 +1,3 @@
+@function prefix($prefix, $X) {
+  @return $prefix + $X;
+}

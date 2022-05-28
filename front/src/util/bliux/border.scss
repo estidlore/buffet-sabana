@@ -1,0 +1,36 @@
+// Round
+
+@each $i in $x {
+  .round#{$i} {
+    border-radius: $i * 4px;
+  }
+  .bord#{$i} {
+    border-width: $i * 1px;
+  }
+}
+
+@each $k, $v in $colors {
+  .bord-#{$k} {
+    border-color: $v;
+  }
+}
+
+.bord {
+  border-style: solid;
+}
+
+.bord-l {
+  border-left-style: solid;
+}
+
+.bord-r {
+  border-right-style: solid;
+}
+
+.bord-t {
+  border-top-style: solid;
+}
+
+.bord-b {
+  border-bottom-style: solid;
+}

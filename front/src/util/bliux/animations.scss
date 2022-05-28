@@ -1,0 +1,84 @@
+@each $i, $v in $x2 {
+  $val: .2s * $v;
+
+  .anim-dur-#{$i} {
+    animation-duration: $val;
+  }
+
+  .anim-del-#{$i} {
+    animation-delay: $val;
+  }
+}
+
+
+@mixin anim($name, $selector:'') {
+  @keyframes #{$name} {
+    @content;
+  }
+  .#{$name + $selector} {
+    animation-name: $name;
+  }
+}
+
+@include anim(anim-fade) {
+  from {
+    opacity: 0;
+  }
+}
+
+@include anim(anim-scale) {
+  from {
+    transform: scale(0);
+  }
+}
+
+@include anim(anim-l) {
+  from {
+    transform: translateX(-100vw);
+  }
+}
+
+@include anim(anim-r) {
+  from {
+    transform: translateX(100vw);
+  }
+}
+
+@include anim(anim-t) {
+  from {
+    transform: translateY(-100vh);
+  }
+}
+
+@include anim(anim-b) {
+  from {
+    transform: translateY(100vh);
+  }
+}
+
+@include anim(anim-td) {
+  from {
+    transform: translateY(-100vh);
+  }
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+@include anim(anim-spin, ':hover>*') {
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.anim-inf {
+  animation-iteration-count: infinite;
+}
+
+.anim-lin {
+  animation-timing-function: linear;
+}
+
+.anim-rev {
+  animation-direction: reverse;
+}

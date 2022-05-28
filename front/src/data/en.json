@@ -1,0 +1,26 @@
+{
+  "beberages": {
+    "title": "Beberages"
+  },
+  "dishes": {
+    "title": "Dishes"
+  },
+  "home": {
+    "essays": {
+      "dataCollectionInTwitterWithAPI": "Data Collection in Twitter with API",
+      "devOps": "DevOps",
+      "title": "Essays"
+    },
+    "introduction": "In Buffet Sabana you can find all kind of beberages and dishes to order.",
+    "subtitle": "All you need to eat",
+    "title": "Welcome to Buffet Sabana"
+  },
+  "ui": {
+    "add": "Create",
+    "del": "Delete",
+    "error": "Error",
+    "get": "Get",
+    "loading": "Loading",
+    "set": "Edit"
+  }
+}

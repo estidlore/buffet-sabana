@@ -1,0 +1,11 @@
+@each $i, $v in $x2 {
+  $val: 0.2s * $v;
+
+  .trns-#{$i} {
+    transition: all $val;
+  }
+  
+  .trns-del-#{$i} {
+    transition-delay: $val;
+  }
+}

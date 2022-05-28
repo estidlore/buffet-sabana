@@ -1,0 +1,13 @@
+$light-color: #eee;
+$dark-color: #111;
+$primary-color: #224466;
+
+*, *:before, *:after {
+  box-sizing: border-box !important;
+}
+
+.no-pointer-ev {
+  pointer-events: none;
+}
+
+@import "../util/bliux";

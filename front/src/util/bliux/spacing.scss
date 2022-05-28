@@ -1,0 +1,117 @@
+// Margin
+
+.m {
+  margin: auto;
+}
+
+.mx {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.my {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.ml {
+  margin-left: auto;
+}
+
+.mr {
+  margin-right: auto;
+}
+
+.mt {
+  margin-top: auto;
+}
+
+.mb {
+  margin-bottom: auto;
+}
+
+// Padding
+
+.p {
+  padding: auto;
+}
+
+.px {
+  padding-left: auto;
+  padding-right: auto;
+}
+
+.py {
+  padding-top: auto;
+  padding-bottom: auto;
+}
+
+.pl {
+  padding-left: auto;
+}
+
+.pr {
+  padding-right: auto;
+}
+
+.pt {
+  padding-top: auto;
+}
+
+.pb {
+  padding-bottom: auto;
+}
+
+@each $i, $v in $sq2 {
+  $val: $v * .5rem;
+  
+  // Margin
+  .m#{$i} {
+    margin: $val;
+  }
+  .mx#{$i} {
+    margin-left: $val;
+    margin-right: $val;
+  }
+  .my#{$i} {
+    margin-top: $val;
+    margin-bottom: $val;
+  }
+  .ml#{$i} {
+    margin-left: $val;
+  }
+  .mr#{$i} {
+    margin-right: $val;
+  }
+  .mt#{$i} {
+    margin-top: $val;
+  }
+  .mb#{$i} {
+    margin-bottom: $val;
+  }
+
+  // Padding
+  .p#{$i} {
+    padding: $val;
+  }
+  .px#{$i} {
+    padding-left: $val;
+    padding-right: $val;
+  }
+  .py#{$i} {
+    padding-top: $val;
+    padding-bottom: $val;
+  }
+  .pl#{$i} {
+    padding-left: $val;
+  }
+  .pr#{$i} {
+    padding-right: $val;
+  }
+  .pt#{$i} {
+    padding-top: $val;
+  }
+  .pb#{$i} {
+    padding-bottom: $val;
+  }
+}

@@ -1,0 +1,55 @@
+@each $k, $v in $sq2 {
+  .f-size-#{$k} {
+    font-size: $v * .5em;
+  }
+}
+
+.decoration-none {
+  text-decoration: none;
+}
+
+.fw-bold {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.875rem;
+}
+
+h6 {
+  font-size: 0.75rem;
+}
+
+.i {
+  font-style: italic;
+}
+
+.txt-center {
+  text-align: center;
+}
+
+.txt-left {
+  text-align: left;
+}
+
+.word-break {
+  word-break: break-all;
+}
