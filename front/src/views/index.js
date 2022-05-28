@@ -1,9 +1,9 @@
-import Beberages from "./Beberages";
+import Beverages from "./Beverages";
 import Dishes from "./Dishes";
 import Home from "./Home";
 
 export {
-  Beberages,
+  Beverages,
   Dishes,
   Home,
 };

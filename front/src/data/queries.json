@@ -1,6 +1,6 @@
 {
-  "beberages": {
-    "api": "beberages.com",
+  "beverages": {
+    "api": "beverages.com",
     "add": {
       "path": "/add",
       "method": "post"

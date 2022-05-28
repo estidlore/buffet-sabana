@@ -1,6 +1,6 @@
 {
-  "beberages": {
-    "title": "Beberages"
+  "beverages": {
+    "title": "Beverages"
   },
   "dishes": {
     "title": "Dishes"
@@ -11,7 +11,7 @@
       "devOps": "DevOps",
       "title": "Essays"
     },
-    "introduction": "In Buffet Sabana you can find all kind of beberages and dishes to order.",
+    "introduction": "In Buffet Sabana you can find all kind of beverages and dishes to order.",
     "subtitle": "All you need to eat",
     "title": "Welcome to Buffet Sabana"
   },

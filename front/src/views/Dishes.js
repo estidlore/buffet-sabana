@@ -27,18 +27,18 @@ const dishData = {
 const Dishes = () => {
   const {data, loading, error} = useQuery(getAll);
   const stShowCreate = useState(false);
+  const showCreate = () => stShowCreate[1](true);
   return (
-    <div className="px2 py5">
+    <div className="px2 py5 wp-600">
       <h1 className="txt-center mb3">{pag.title}</h1>
-      <div>
-        <Load loading={loading} error={error}>
-          {
-            data && data.length > 0 && data.map((dish) => (
-              <Dish key={dish.id} {...dish} />
-            ))
-          }
-        </Load>
-      </div>
+      <button onClick={showCreate}>{ui.add}</button>
+      <Load loading={loading} error={error}>
+        {
+          data && data.length > 0 && data.map((dish) => (
+            <Dish key={dish.id} {...dish} />
+          ))
+        }
+      </Load>
       <Modal title="Create" stShow={stShowCreate} >
         <Create />
       </Modal>

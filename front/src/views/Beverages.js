@@ -1,8 +1,8 @@
 import en from "../data/en.json";
 
-const {beberages: pag} = en;
+const {beverages: pag} = en;
 
-const Beberages = () => {
+const Beverages = () => {
   return (
     <div className="mx2 my5">
       <h1 className="txt-center">{pag.title}</h1>
@@ -10,4 +10,4 @@ const Beberages = () => {
   );
 };
 
-export default Beberages;
+export default Beverages;
