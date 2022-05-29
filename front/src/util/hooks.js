@@ -18,10 +18,11 @@ export const useFetch = ({url, init, initState = {}, deps = []}) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    
     const fetchData = async () => {
       setError(null);
       setLoading(true);
-      fetch(url, init)
+      fetch(url)
         .then(res => res.json()).then(res => {
           setData(res);
           setLoading(false);

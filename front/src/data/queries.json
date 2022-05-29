@@ -19,7 +19,7 @@
     },
     "set": {
       "path": "/beverages",
-      "method": "PATCH"
+      "method": "PUT"
     }
   },
   "dishes": {
@@ -42,7 +42,7 @@
     },
     "set": {
       "path": "/dishes",
-      "method": "PATCH"
+      "method": "PUT"
     }
   }
 }

@@ -36,10 +36,7 @@ const Dishes = () => {
       <button onClick={showCreate}>{ui.add}</button>
       <Load loading={loading} error={error}>
         {
-          /*data && data.length > 0 && data.map((dish) => (
-            <Dish key={dish.id} {...dish} />
-          ))/**/
-          test.dishes.map((dish) => (
+          data && data.length > 0 && data.map((dish) => (
             <Dish key={dish.id} {...dish} />
           ))
         }
@@ -69,7 +66,7 @@ const Dish = ({
       method: del.method,
       body: id,
     });
-    fetch(query.url, query.init)
+    fetch(query.url+"/"+id, {method: query.init.method})
       .then(res => res.json())
       .then(data => {
         console.log(data);
@@ -117,11 +114,14 @@ const Dish = ({
 
 const Create = ({onSubmit}) => {
   const [inputData, setInputData] = useObjState({...dishData});
-  const setData = ({target: {name, value}}) =>
-    setInputData({[name]: value});
+  const setData = ({target: {name, type, value}}) =>{
+    setInputData({[name]: type === "number" ? parseInt(value) : value}); 
+    console.log(name, typeof(type === "number" ? parseInt(value) : value));
+  };
   const submit = (e) => {
     e.preventDefault();
-    axiosDishesInstance.post("dishes", inputData)
+    const {id, ...data} = inputData;
+    axiosDishesInstance.post("dishes", data)
           .then(() => onSubmit())
   };
   return (
@@ -155,6 +155,7 @@ const Create = ({onSubmit}) => {
         onChange={setData}
         placeholder="Price"
         value={inputData.price}
+        type="number"
       />
       <Input
         name="type"
@@ -183,7 +184,9 @@ const Set = ({description, id, name, origin, price, type, onSubmit}) => {
     const query = queryFactory.get(set.path, {
       method: set.method,
     });
-    fetch(query.url, query.init)
+
+    const {id, ...data} = inputData;
+    fetch(query.url+"/"+inputData.id, {method: query.init.method, body: JSON.stringify(inputData)})
       .then(res => res.json())
       .then(data => {
         console.log(data);
