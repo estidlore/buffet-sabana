@@ -18,7 +18,6 @@ const useQuery = (data) => useFetch(queryFactory.get(data.path, {
 
 const dishData = {
   description: "",
-  id: "",
   name: "",
   origin: "",
   price: "",
@@ -117,8 +116,7 @@ const Create = ({onSubmit}) => {
     setInputData({[name]: type === "number" ? parseInt(value) : value});
   const submit = (e) => {
     e.preventDefault();
-    const {id, ...data} = inputData;
-    axiosDishesInstance.post("dishes", data)
+    axiosDishesInstance.post("dishes", inputData)
       .then(() => onSubmit())
   };
   return (
@@ -162,7 +160,6 @@ const Create = ({onSubmit}) => {
 const Set = ({description, id, name, origin, price, type, onSubmit}) => {
   const [inputData, setInputData] = useObjState({
     description: description,
-    id: id,
     name: name,
     origin: origin,
     price: price,
