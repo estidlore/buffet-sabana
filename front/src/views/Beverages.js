@@ -154,7 +154,7 @@ const Create = ({onSubmit}) => {
         placeholder={beverages.type}
         value={inputData.type}
       />
-      <button onClick={submit}>{ui.add}</button>
+      <button onClick={(e) => submit(e)}>{ui.add}</button>
     </>
   );
 };
