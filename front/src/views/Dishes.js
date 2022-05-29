@@ -21,7 +21,7 @@ const dishData = {
   id: "",
   name: "",
   origin: "",
-  price: 0,
+  price: "",
   type: "",
 }
 
@@ -83,13 +83,13 @@ const Dish = ({
         <h3>{id}</h3>
       </div>
       <div className="row">
-        <p className="w5">Description</p>
+        <p className="w5">{dishes.description}</p>
         <p className="w5">{description}</p>
-        <p className="w5">Origin</p>
+        <p className="w5">{dishes.origin}</p>
         <p className="w5">{origin}</p>
-        <p className="w5">Price</p>
+        <p className="w5">{dishes.price}</p>
         <p className="w5">{price}</p>
-        <p className="w5">Type</p>
+        <p className="w5">{dishes.type}</p>
         <p className="w5">{type}</p>
       </div>
       <div className="mt3">
@@ -220,13 +220,14 @@ const Set = ({description, id, name, origin, price, type, onSubmit}) => {
 };
 
 const Load = ({children, error, loading}) => {
+  const loadTxt = `${ui.loading} ${dishes.title}`;
   if (loading) {
-    return <h3 className="txt-center i">{ui.loading}</h3>;
+    return <h3 className="txt-center i round2 bg-gray p2 my2">{loadTxt}</h3>;
   }
   if (error) {
     return (
-      <h3 className="txt-center i">
-        {`${ui.error} ${ui.loading} ${dishes.title}`}
+      <h3 className="txt-center i round2 bg-red p2 my2">
+        {`${ui.error} ${loadTxt}`}
       </h3>
     );
   }

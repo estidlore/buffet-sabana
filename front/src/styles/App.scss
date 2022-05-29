@@ -10,4 +10,12 @@ $primary-color: #224466;
   pointer-events: none;
 }
 
+.bg-gray {
+  background-color: #888;
+}
+
+.bg-red {
+  background-color: #e22;
+}
+
 @import "../util/bliux";

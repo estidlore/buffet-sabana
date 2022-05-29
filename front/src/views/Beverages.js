@@ -20,8 +20,8 @@ const beverageData = {
   description: "",
   id: "",
   name: "",
-  price: 0,
-  sugar: false,
+  price: "",
+  sugar: "",
   type: "",
 }
 
@@ -198,10 +198,10 @@ const Set = ({description, id, name, price, sugar, type, onSubmit}) => {
         placeholder={beverages.description}
         value={inputData.description}
       />
-      <Input name="origin"
+      <Input name="sugar"
         onChange={setData}
-        placeholder={beverages.origin}
-        value={inputData.origin}
+        placeholder={beverages.sugar}
+        value={inputData.sugar}
       />
       <Input name="price"
         onChange={setData}
@@ -220,13 +220,14 @@ const Set = ({description, id, name, price, sugar, type, onSubmit}) => {
 };
 
 const Load = ({children, error, loading}) => {
+  const loadTxt = `${ui.loading} ${beverages.title}`;
   if (loading) {
-    return <h3 className="txt-center i">{ui.loading}</h3>;
+    return <h3 className="txt-center i round2 bg-gray p2 my2">{loadTxt}</h3>;
   }
   if (error) {
     return (
-      <h3 className="txt-center i">
-        {`${ui.error} ${ui.loading} ${beverages.title}`}
+      <h3 className="txt-center i round2 bg-red p2 my2">
+        {`${ui.error} ${loadTxt}`}
       </h3>
     );
   }
