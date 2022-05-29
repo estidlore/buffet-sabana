@@ -1,0 +1,44 @@
+{
+  "dishes": [
+    {
+      "description": "Description of dish 1",
+      "id": "1",
+      "name": "Dish 1",
+      "origin": "Origin 1",
+      "price": 1000,
+      "type": "Type 1"
+    },
+    {
+      "description": "Description of dish 2",
+      "id": "2",
+      "name": "Dish 2",
+      "origin": "Origin 2",
+      "price": 2000,
+      "type": "Type 2"
+    },
+    {
+      "description": "Description of dish 3",
+      "id": "3",
+      "name": "Dish 3",
+      "origin": "Origin 3",
+      "price": 3000,
+      "type": "Type 3"
+    },
+    {
+      "description": "Description of dish 4",
+      "id": "4",
+      "name": "Dish 4",
+      "origin": "Origin 4",
+      "price": 4000,
+      "type": "Type 4"
+    },
+    {
+      "description": "Description of dish 5",
+      "id": "5",
+      "name": "Dish 5",
+      "origin": "Origin 5",
+      "price": 5000,
+      "type": "Type 5"
+    }
+  ]
+}

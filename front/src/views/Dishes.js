@@ -1,9 +1,10 @@
 import {useState} from "react";
 import en from "../data/en.json";
+import test from "../data/test.json";
 import queries from "../data/queries.json";
 
 import {createQuery} from "../util/funcs";
-import {useFetch} from "../util/hooks";
+import {useFetch, useObjState} from "../util/hooks";
 
 import {Input, Modal} from "../components";
 import { axiosDishesInstance } from "../axios";
@@ -35,7 +36,10 @@ const Dishes = () => {
       <button onClick={showCreate}>{ui.add}</button>
       <Load loading={loading} error={error}>
         {
-          data && data.length > 0 && data.map((dish) => (
+          /*data && data.length > 0 && data.map((dish) => (
+            <Dish key={dish.id} {...dish} />
+          ))/**/
+          test.dishes.map((dish) => (
             <Dish key={dish.id} {...dish} />
           ))
         }
@@ -59,7 +63,7 @@ const Dish = ({
 }) => {
   const stShowSet = useState(false);
 
-  const onDel = () => {
+  const onDel = (e) => {
     e.preventDefault();
     const query = queryFactory.get(del.path, {
       method: del.method,
@@ -112,36 +116,68 @@ const Dish = ({
 };
 
 const Create = ({onSubmit}) => {
-  let inputData = {...dishData};
-  const setData = e => inputData[e.target.name] = e.target.value;
-  const submit = e => {
+  const [inputData, setInputData] = useObjState({...dishData});
+  const setData = ({target: {name, value}}) =>
+    setInputData({[name]: value});
+  const submit = (e) => {
     e.preventDefault();
     axiosDishesInstance.post("dishes", inputData)
           .then(() => onSubmit())
   };
   return (
     <>
-      <Input name="id" onChange={setData} placeholder="Id" />
-      <Input name="name" onChange={setData} placeholder="Name" />
-      <Input name="description" onChange={setData} placeholder="Description" />
-      <Input name="origin" onChange={setData} placeholder="Origin" />
-      <Input name="price" onChange={setData} placeholder="Price" />
-      <Input name="type" onChange={setData} placeholder="Type" />
+      <Input
+        name="id"
+        onChange={setData}
+        placeholder="Id"
+        value={inputData.id}
+      />
+      <Input
+        name="name"
+        onChange={setData}
+        placeholder="Name"
+        value={inputData.name}
+      />
+      <Input
+        name="description"
+        onChange={setData}
+        placeholder="Description"
+        value={inputData.description}
+      />
+      <Input
+        name="origin"
+        onChange={setData}
+        placeholder="Origin"
+        value={inputData.origin}
+      />
+      <Input
+        name="price"
+        onChange={setData}
+        placeholder="Price"
+        value={inputData.price}
+      />
+      <Input
+        name="type"
+        onChange={setData}
+        placeholder="Type"
+        value={inputData.type}
+      />
       <button onClick={submit}>{ui.add}</button>
     </>
   );
 };
 
 const Set = ({description, id, name, origin, price, type, onSubmit}) => {
-  let inputData = {
+  const [inputData, setInputData] = useObjState({
     description: description,
     id: id,
     name: name,
     origin: origin,
     price: price,
     type: type,
-  };
-  const setData = e => inputData[e.target.name] = e.target.value;
+  });
+  const setData = ({target: {name, value}}) =>
+    setInputData({[name]: value});
   const submit = e => {
     e.preventDefault();
     const query = queryFactory.get(set.path, {
@@ -157,18 +193,41 @@ const Set = ({description, id, name, origin, price, type, onSubmit}) => {
   };
   return (
     <>
-      <Input name="name" onChange={setData} placeholder="Name" />
-      <Input name="description" onChange={setData} placeholder="Description" />
-      <Input name="origin" onChange={setData} placeholder="Origin" />
-      <Input name="price" onChange={setData} placeholder="Price" />
-      <Input name="type" onChange={setData} placeholder="Type" />
+      <Input
+        name="name"
+        onChange={setData}
+        placeholder="Name"
+        value={inputData.name}
+      />
+      <Input
+        name="description"
+        onChange={setData}
+        placeholder="Description"
+        value={inputData.description}
+      />
+      <Input name="origin"
+        onChange={setData}
+        placeholder="Origin"
+        value={inputData.origin}
+      />
+      <Input name="price"
+        onChange={setData}
+        placeholder="Price"
+        value={inputData.price}
+      />
+      <Input
+        name="type"
+        onChange={setData}
+        placeholder="Type"
+        value={inputData.type}
+      />
       <button onClick={submit}>{ui.set}</button>
     </>
   );
 };
 
 const Load = ({children, error, loading}) => {
-  if (loading) {
+  /*if (loading) {
     return <h3 className="txt-center i">{ui.loading}</h3>;
   }
   if (error) {
