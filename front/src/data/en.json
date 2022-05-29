@@ -1,9 +1,21 @@
 {
   "beverages": {
-    "title": "Beverages"
+    "description": "Description",
+    "id": "Id",
+    "name": "Name",
+    "price": "Price",
+    "sugar": "Sugar",
+    "title": "Beverages",
+    "type": "Type"
   },
   "dishes": {
-    "title": "Dishes"
+    "description": "Description",
+    "id": "Id",
+    "name": "Name",
+    "origin": "Origin",
+    "price": "Price",
+    "title": "Dishes",
+    "type": "Type"
   },
   "home": {
     "essays": {

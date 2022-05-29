@@ -3,7 +3,7 @@ import en from "../data/en.json";
 const {home: pag} = en;
 
 const Home = () => (
-  <div className="mx2 my5">
+  <div className="px2 my5 wp-600">
     <h1 className="mb2 txt-center">{pag.title}</h1>
     <h3 className="mb5 txt-center i">{pag.subtitle}</h3>
     <p>{pag.introduction}</p>
