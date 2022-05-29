@@ -6,6 +6,7 @@ import {createQuery} from "../util/funcs";
 import {useFetch} from "../util/hooks";
 
 import {Input, Modal} from "../components";
+import { axiosDishesInstance } from "../axios";
 
 const {dishes: pag, ui} = en;
 const {api, add, del, get, getAll, set} = queries.dishes;
@@ -115,17 +116,8 @@ const Create = ({onSubmit}) => {
   const setData = e => inputData[e.target.name] = e.target.value;
   const submit = e => {
     e.preventDefault();
-    const query = queryFactory.get(add.path, {
-      method: add.method,
-    });
-    fetch(query.url, query.init)
-      .then(res => res.json())
-      .then(data => {
-        console.log(data);
-        inputData = {...dishData};
-        onSubmit();
-      })
-      .catch(err => console.log(err));
+    axiosDishesInstance.post("dishes", inputData)
+          .then(() => onSubmit())
   };
   return (
     <>
